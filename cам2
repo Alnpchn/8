@@ -1,0 +1,29 @@
+#include<locale.h>
+#include <stdio.h>
+#include <math.h>
+double name(double x, double n, double result1)
+{
+	int i;
+if (x <= 1.0 && x >= -1.0 && n > 0) {
+	for (i = 1; i <= n; i++) {
+		result1 += pow(cos(x), i);
+	}
+}
+}
+
+	int main()
+{
+	setlocale(LC_ALL, "RUS");
+	double n, x;
+	double result1;
+	result1 = 0.0;
+	printf("Введите N > 0\n");
+	scanf("%lf", &n);
+	printf("Введите значение Сos\n");
+	scanf("%lf", &x);
+	result1 = name(x, n, result1);
+	printf("result = %lf", result1);
+	system ("pause");
+	printf("Ошибка, N или Cos не удовлетворяют условию\n");
+	return 0;
+}
